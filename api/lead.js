@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       headers: {
         "Content-Type": "application/json",
         accept: "application/json",
-        token: "72d919236350de7e54850a0cfa83096b573b0016",
+        token: process.env.CVCRM_TOKEN,
       },
       body: JSON.stringify(req.body),
     });
