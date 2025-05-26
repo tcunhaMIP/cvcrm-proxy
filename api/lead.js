@@ -1,5 +1,14 @@
 export default async function handler(req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "https://www.jardins156.com.br");
+  const allowedOrigins = [
+    "https://jardins156.com.br",
+    "https://www.mipconstrutora.com.br",
+  ];
+
+  const origin = req.headers.origin;
+
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, token");
 
