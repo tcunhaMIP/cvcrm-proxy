@@ -1,6 +1,8 @@
 export default async function handler(req, res) {
   const allowedOrigins = [
     "https://jardins156.com.br",
+    "https://www.jardins156.com.br",
+    "https://mipconstrutora.com.br",
     "https://www.mipconstrutora.com.br",
   ];
 
