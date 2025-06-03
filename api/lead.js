@@ -4,6 +4,8 @@ export default async function handler(req, res) {
     "https://www.jardins156.com.br",
     "https://mipconstrutora.com.br",
     "https://www.mipconstrutora.com.br",
+    "http://127.0.0.1:5500", // desenvolvimento local
+    "http://localhost:5500", // alternativa comum
   ];
 
   const origin = req.headers.origin;
