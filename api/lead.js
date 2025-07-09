@@ -1,4 +1,5 @@
 export default async function handler(req, res) {
+  // Origens permitidas para chamada de API
   const allowedOrigins = [
     "https://jardins156.com.br",
     "https://www.jardins156.com.br",
@@ -8,6 +9,7 @@ export default async function handler(req, res) {
     "http://localhost:5500", // alternativa comum
   ];
 
+  // processo de verificacao
   const origin = req.headers.origin;
 
   if (allowedOrigins.includes(origin)) {
@@ -26,16 +28,18 @@ export default async function handler(req, res) {
   }
 
   try {
+    // chama a API do CV CRM
     const response = await fetch("https://mip.cvcrm.com.br/api/cvio/lead", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         accept: "application/json",
-        token: process.env.CVCRM_TOKEN,
+        token: process.env.CVCRM_TOKEN, // variavel ambiente na Vercel
       },
       body: JSON.stringify(req.body),
     });
 
+    // resposta
     const data = await response.json();
     res.status(response.status).json(data);
   } catch (error) {
