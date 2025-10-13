@@ -45,15 +45,18 @@ export default async function handler(req, res) {
     }
 
     // chama a API do CV CRM
-    const response = await fetch("https://mip.cvcrm.com.br/api/cvio/lead", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        accept: "application/json",
-        token: process.env.CVCRM_TOKEN, // variavel ambiente na Vercel
-      },
-      body: JSON.stringify(body),
-    });
+    const response = await fetch(
+      "https://mip.cvcrm.com.br/api/v1/comercial/leads",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          accept: "application/json",
+          token: process.env.CVCRM_TOKEN, // variavel ambiente na Vercel
+        },
+        body: JSON.stringify(body),
+      }
+    );
 
     // resposta
     const data = await response.json();
