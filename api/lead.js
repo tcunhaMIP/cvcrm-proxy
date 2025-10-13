@@ -32,6 +32,18 @@ export default async function handler(req, res) {
   }
 
   try {
+    let body = req.body;
+    if (typeof body === "string") {
+      try {
+        body = JSON.parse(body);
+      } catch (err) {
+        console.error("Body inválido recebido no proxy:", body);
+        return res
+          .status(400)
+          .json({ error: "Body inválido (não é JSON válido)" });
+      }
+    }
+
     // chama a API do CV CRM
     const response = await fetch("https://mip.cvcrm.com.br/api/cvio/lead", {
       method: "POST",
@@ -40,7 +52,7 @@ export default async function handler(req, res) {
         accept: "application/json",
         token: process.env.CVCRM_TOKEN, // variavel ambiente na Vercel
       },
-      body: JSON.stringify(req.body),
+      body: JSON.stringify(body),
     });
 
     // resposta
