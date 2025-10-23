@@ -1,6 +1,7 @@
 export default async function handler(req, res) {
   // Origens permitidas para chamada de API
   const allowedOrigins = [
+    "http://carbonbyjaneiro.com.br",
     "https://jardins156.com.br",
     "https://www.jardins156.com.br",
     "https://mipconstrutora.com.br",
