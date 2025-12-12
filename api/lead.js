@@ -12,7 +12,8 @@ export default async function handler(req, res) {
     "http://localhost:5500", // alternativa comum
     "http://127.0.0.1:5173", // desenvolvimento local
     "http://localhost:5173", // alternativa comum
-    "https://cad-digital.vercel.app", // cad digital vercel
+    "https://cad-digital.vercel.app",
+    "https://oneviewluxemburgo.com.br",
   ];
 
   // processo de verificacao
