@@ -15,6 +15,7 @@ export default async function handler(req, res) {
     "https://carbonbyjaneiro.com.br",
     "https://www.carbonbyjaneiro.com.br",
     "https://oneviewluxemburgo.com.br",
+    "https://www.oneviewluxemburgo.com.br",
   ];
 
   // processo de verificacao
