@@ -1,18 +1,19 @@
 export default async function handler(req, res) {
   // Origens permitidas para chamada de API
   const allowedOrigins = [
-    "http://carbonbyjaneiro.com.br",
     "https://jardins156.com.br",
     "https://www.jardins156.com.br",
     "https://mipconstrutora.com.br",
     "https://www.mipconstrutora.com.br",
     "https://janeiroengenharia.com.br",
     "https://www.janeiroengenharia.com.br",
-    "http://127.0.0.1:5500", // desenvolvimento local
-    "http://localhost:5500", // alternativa comum
-    "http://127.0.0.1:5173", // desenvolvimento local
-    "http://localhost:5173", // alternativa comum
+    "http://127.0.0.1:5500",
+    "http://localhost:5500",
+    "http://127.0.0.1:5173",
+    "http://localhost:5173",
     "https://cad-digital.vercel.app",
+    "https://carbonbyjaneiro.com.br",
+    "https://www.carbonbyjaneiro.com.br",
     "https://oneviewluxemburgo.com.br",
   ];
 
